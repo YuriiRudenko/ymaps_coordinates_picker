@@ -50,12 +50,6 @@ beside the option depicted on the example above it can be configured with the fo
 General configuration options
 =============================
 
-You can configure the following default values by overriding these values using:
-YmapsCoordinatesPicker.configure method.
-
-  width #= <width>                                                                       
-  height #= <height>                                                                      
-  language #= <language>
 There's a handy generator that generates the default configuration file into config/initializers directory.
 Run the following generator command, then edit the generated file.
 
@@ -65,7 +59,7 @@ rails g ymaps_coordinates_picker:config
 
 VERSION
 =======
--0.1.0
+-0.0.1
     -  Gem started
 LICENSE
 =======
