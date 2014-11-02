@@ -1,0 +1,19 @@
+- options = {}
+- options['data-turbolinks-track'] = true if Object.const_defined? 'Turbolinks'
+= javascript_include_tag "http://api-maps.yandex.ru/2.1.16/?load=package.full&lang=#{YmapsCoordinatesPicker.config.locale}", options
+= javascript_include_tag 'ymaps_coordinates_picker', options
+#yandex_picker_map style="width: #{width}px; height: #{height}px;"
+- if latlng_field_name.present?
+  = render partial: 'ymaps_coordinates_picker/multiple_map', locals: {\
+    markers: markers,\
+    latlng_field_name: latlng_field_name,
+    latlng_dom_class: latlng_dom_class\
+  }
+- else
+  = render partial: 'ymaps_coordinates_picker/single_map', locals: {\
+    markers: markers,\
+    lat_field_name: lat_field_name,\
+    lng_field_name: lng_field_name,\
+    lat_dom_class: lat_dom_class,\
+    lng_dom_class: lng_dom_class\
+  }

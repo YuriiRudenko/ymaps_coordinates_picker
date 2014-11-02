@@ -1,0 +1,9 @@
+= hidden_field_tag lat_field_name, markers[0].try(:[], 0) || '', class: lat_dom_class
+= hidden_field_tag lng_field_name, markers[0].try(:[], 1) || '', class: lng_dom_class
+javascript:
+  markers = #{markers};
+  lat_field_name   = '#{lat_field_name}';
+  lng_field_name   = '#{lng_field_name}';
+  lat_dom_class    = '#{lat_dom_class}';
+  lng_dom_class    = '#{lng_dom_class}';
+  initialize_single_map();

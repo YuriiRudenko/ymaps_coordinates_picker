@@ -1,0 +1,8 @@
+#ymapsFields
+  - markers.each do |marker|
+    = hidden_field_tag latlng_field_name, marker, class: latlng_dom_class, id: nil
+javascript:
+  markers = #{markers};
+  latlng_field_name   = '#{latlng_field_name}';
+  latlng_dom_class    = '#{latlng_dom_class}';
+  initialize_multi_map();
