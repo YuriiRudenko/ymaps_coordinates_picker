@@ -12,7 +12,7 @@ Usage
 add the following to your `Gemfile`:
 
 ```ruby
-gem " ymaps_coordinates_picker", github: 'VeloKoder/ymaps_coordinates_picker'
+gem 'ymaps_coordinates_picker', github: 'VeloKoder/ymaps_coordinates_picker'
 ```
 
 Then, add to your model if you want single picker:
