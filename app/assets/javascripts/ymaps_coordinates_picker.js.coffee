@@ -7,14 +7,10 @@ calculate_map_bounds = (markers) ->
   if markers.length == 1
     return [[minX - 0.005, minY - 0.005], [maxX + 0.005, maxY + 0.005]]
   for i in [1...markers.length]
-    if markers[i][0] > maxX
-      maxX = markers[i][0]
-    if markers[i][0] < minX
-      minX = markers[i][0]
-    if markers[i][1] > maxY
-      maxY = markers[i][1]
-    if markers[i][1] < minY
-      minY = markers[i][1]
+    maxX = markers[i][0] if markers[i][0] > maxX
+    minX = markers[i][0] if markers[i][0] < minX
+    maxY = markers[i][1] if markers[i][1] > maxY
+    minY = markers[i][1] if markers[i][1] < minY
   return [[minX, minY], [maxX, maxY]]
 
 add_input = (marker) ->
@@ -22,7 +18,6 @@ add_input = (marker) ->
   $('#ymapsFields').html($('#ymapsFields').html() + field)
 
 reload_fields = ->
-  borders = []
   $('#ymapsFields').html ''
   @map.geoObjects.each((geoObject)->
     add_input geoObject.geometry.getCoordinates()
