@@ -1,7 +1,7 @@
 require 'ymaps_coordinates_picker/config'
 # requiring picker engine
 require 'ymaps_coordinates_picker/engine' if defined?(Rails)
-# picker autoloader (for gem in future)
+# picker autoloader
 module YmapsCoordinatesPicker
   # adding picker helper to ViewHelper module
   autoload :ViewHelper, 'ymaps_coordinates_picker/view_helper'
